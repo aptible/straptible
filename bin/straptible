@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
-require 'active_support/inflector'
-
-def require_lib(name)
-  path = File.join('..', 'lib', *(name.split('::').map(&:underscore)))
-  require_relative path
+begin
+  require 'straptible'
+rescue
+  require 'rubygems'
+  require 'straptible'
 end
 
 def usage(dest = $stdout)
@@ -14,7 +14,7 @@ end
 flavor = ARGV.shift
 case flavor
 when 'api'
-  require_lib 'Straptible::Rails::Generators::Api'
+  require File.join('straptible', 'rails', 'generators', 'api')
   Straptible::Rails::Generators::Api.start
 when nil
   usage($stderr)
