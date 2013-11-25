@@ -1,4 +1,7 @@
-# Straptible
+# ![](lib/straptible/rails/templates/icon-72.png) Straptible
+
+[![Gem Version](https://badge.fury.io/rb/straptible.png)](https://rubygems.org/gems/straptible)
+[![Build Status](https://secure.travis-ci.org/aptible/straptible.png?branch=master)](http://travis-ci.org/aptible/straptible)
 
 A tool for bootstrapping new applications, document repositories, etc. according to Aptible's hyperopinionated best practices.
 
@@ -18,9 +21,7 @@ Then, to create a new project, first choose your flavor:
 
 Then, run:
 
-    straptible <flavor> <project-name>
-
-## Flavor-specific Options
+    straptible <flavor> <path> [options...]
 
 
 ## Copyright and License

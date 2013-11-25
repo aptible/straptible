@@ -1,0 +1,15 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= app_name %>_development
+  pool: 5
+  username: aptible
+  password:
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: <%= app_name %>_test
+  pool: 5
+  username: aptible
+  password:

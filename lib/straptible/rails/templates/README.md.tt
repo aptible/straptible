@@ -1,0 +1,10 @@
+# ![](public/icon-72.png) <%= app_const_base %>
+
+[![Build Status](https://secure.travis-ci.org/aptible/<%= app_name %>.png?branch=master)](http://travis-ci.org/aptible/<%= app_name %>)
+
+A tool for bootstrapping new applications, document repositories, etc. according to Aptible's hyperopinionated best practices.
+
+
+## Copyright
+
+Copyright (c) 2013 [Aptible](https://www.aptible.com). All rights reserved.

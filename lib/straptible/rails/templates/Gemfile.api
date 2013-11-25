@@ -1,0 +1,15 @@
+source 'https://rubygems.org'
+
+gem 'rails'
+gem 'pg'
+gem 'draper'
+gem 'rabl'
+
+group :development, :test do
+  gem 'annotate'
+  gem 'aptible-tasks'
+  gem 'rubocop', github: 'bbatsov/rubocop'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'pry'
+end
