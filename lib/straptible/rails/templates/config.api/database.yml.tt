@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: <%= app_name %>_development
+  database: <%= app_name.gsub('-', '_') %>_development
   pool: 5
   username: aptible
   password:
@@ -9,7 +9,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: <%= app_name %>_test
+  database: <%= app_name.gsub('-', '_') %>_test
   pool: 5
   username: aptible
   password:

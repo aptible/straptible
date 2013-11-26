@@ -33,7 +33,7 @@ describe 'straptible api' do
     it 'includes an appropriate README.md' do
       readme = File.join(@tmpdir, 'foobar', 'README.md')
       File.exist?(readme).should be_true
-      File.read(readme).should match /\#.*public\/icon-72.png.*Foobar/
+      File.read(readme).should match /\#.*public\/icon-72-cropped.png.*Foobar/
     end
 
     it 'does not include HTML error pages' do
@@ -49,6 +49,23 @@ describe 'straptible api' do
     it 'includes app/decorators/' do
       app = File.join(@tmpdir, 'foobar', 'app')
       File.exist?(File.join(app, 'decorators')).should be_true
+    end
+
+    it 'has a spec/spec_helper.rb' do
+      spec = File.join(@tmpdir, 'foobar', 'spec')
+      File.exist?(File.join(spec, 'spec_helper.rb')).should be_true
+    end
+
+    it 'has a valid database.yml' do
+      database_yml = File.join(@tmpdir, 'foobar', 'config', 'database.yml')
+      File.exist?(database_yml).should be_true
+      File.read(database_yml).should match /foobar_development/
+      File.read(database_yml).should match /foobar_test/
+    end
+
+    it 'is initialized as a Git repository' do
+      git_log = `cd #{File.join(@tmpdir, 'foobar')} && git log --oneline`
+      git_log.should =~ /Initial commit.*#{Straptible::VERSION}/
     end
   end
 

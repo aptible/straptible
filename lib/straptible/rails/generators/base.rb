@@ -31,6 +31,12 @@ module Straptible
           super
         end
 
+        def git_init
+          git init:   '.',
+              add:    '.',
+              commit: "-m 'Initial commit (Straptible #{Straptible::VERSION})'"
+        end
+
         protected
 
         def get_builder_class

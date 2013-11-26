@@ -1,7 +1,8 @@
-# ![](lib/straptible/rails/templates/icon-72.png) Straptible
+# ![](lib/straptible/rails/templates/icon-72-cropped.png) Straptible
 
 [![Gem Version](https://badge.fury.io/rb/straptible.png)](https://rubygems.org/gems/straptible)
 [![Build Status](https://secure.travis-ci.org/aptible/straptible.png?branch=master)](http://travis-ci.org/aptible/straptible)
+[![Dependency Status](https://gemnasium.com/aptible/straptible.png)](https://gemnasium.com/aptible/straptible)
 
 A tool for bootstrapping new applications, document repositories, etc. according to Aptible's hyperopinionated best practices.
 

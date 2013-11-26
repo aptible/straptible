@@ -16,9 +16,12 @@ module Straptible
           directory 'config.api', 'config'
         end
 
+        def public_directory
+          directory 'public.api', 'public'
+        end
+
         def leftovers
           restructure_app
-          remove_error_pages
           super
         end
 
@@ -27,14 +30,10 @@ module Straptible
           remove_dir 'app/controllers/concerns'
           remove_dir 'app/helpers'
           remove_dir 'app/mailers'
+          remove_dir 'app/models/concerns'
           remove_dir 'app/views/layouts'
-          empty_directory 'app/decorators'
-        end
 
-        def remove_error_pages
-          remove_file 'public/404.html'
-          remove_file 'public/422.html'
-          remove_file 'public/500.html'
+          empty_directory 'app/decorators'
         end
       end
     end

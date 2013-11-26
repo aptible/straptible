@@ -1,10 +1,21 @@
-# ![](public/icon-72.png) <%= app_const_base %>
+# ![](public/icon-72-cropped.png) <%= app_const_base %>
 
-[![Build Status](https://secure.travis-ci.org/aptible/<%= app_name %>.png?branch=master)](http://travis-ci.org/aptible/<%= app_name %>)
+TODO: Add description for this API.
 
-A tool for bootstrapping new applications, document repositories, etc. according to Aptible's hyperopinionated best practices.
+## Running Locally
 
+    git clone git@github.com:aptible/<%= app_name %>.git
+    cd <%= app_name %>
+    bundle install
+    bundle exec rake db:setup
+    bundle exec rails s
+
+## Continuous Integration
+
+The following command will run Ruby style guide checking, unit tests, and integration tests. Make sure it passes before submitting any pull requests!
+
+    bundle exec rake ci
 
 ## Copyright
 
-Copyright (c) 2013 [Aptible](https://www.aptible.com). All rights reserved.
+Copyright (c) <%= Time.now.strftime("%Y") %> [Aptible](https://www.aptible.com). All rights reserved.
