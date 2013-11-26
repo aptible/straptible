@@ -1,4 +1,4 @@
-# ![](lib/straptible/rails/templates/icon-72-cropped.png) Straptible
+# ![](lib/straptible/rails/templates/public.api/icon-72-cropped.png) Straptible
 
 [![Gem Version](https://badge.fury.io/rb/straptible.png)](https://rubygems.org/gems/straptible)
 [![Build Status](https://secure.travis-ci.org/aptible/straptible.png?branch=master)](http://travis-ci.org/aptible/straptible)
