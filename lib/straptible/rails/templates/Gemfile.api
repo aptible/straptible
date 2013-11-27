@@ -4,6 +4,7 @@ gem 'rails'
 gem 'pg'
 gem 'draper'
 gem 'rabl'
+gem 'oj'
 
 group :development, :test do
   gem 'annotate'
