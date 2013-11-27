@@ -67,6 +67,12 @@ describe 'straptible api' do
       git_log = `cd #{File.join(@tmpdir, 'foobar')} && git log --oneline`
       git_log.should =~ /Initial commit.*#{Straptible::VERSION}/
     end
+
+    it 'has a .travis.yml file which includes JRuby in the build matrix' do
+      travis_yml = File.join(@tmpdir, 'foobar', '.travis.yml')
+      File.exist?(travis_yml).should be_true
+      File.read(travis_yml).should match /jruby/
+    end
   end
 
   context 'executing bundle install' do

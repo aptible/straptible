@@ -21,8 +21,13 @@ module Straptible
         end
 
         def leftovers
+          travis_yml
           restructure_app
           super
+        end
+
+        def travis_yml
+          copy_file 'travis.yml.api', '.travis.yml'
         end
 
         def restructure_app
