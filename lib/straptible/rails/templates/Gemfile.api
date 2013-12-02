@@ -9,6 +9,7 @@ gem 'oj'
 group :development, :test do
   gem 'annotate'
   gem 'aptible-tasks'
+  gem 'rabl-generators'
   gem 'rubocop', github: 'bbatsov/rubocop'
   gem 'rspec'
   gem 'rspec-rails'
