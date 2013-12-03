@@ -78,6 +78,13 @@ describe 'straptible api' do
       package_json = File.join(@tmpdir, 'foobar', 'package.json')
       File.exist?(package_json).should be_true
     end
+
+    it 'has an initializer for the JSON-API MIME type' do
+      initializers = File.join(@tmpdir, 'foobar', 'config', 'initializers')
+      mime_types = File.join(initializers, 'mime_types.rb')
+      File.exist?(mime_types).should be_true
+      File.read(mime_types).should match /:json_api/
+    end
   end
 
   context 'executing bundle install' do

@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails'
 gem 'pg'
-gem 'draper'
+gem 'draper', github: 'fancyremarker/draper', branch: 'aptible'
 gem 'rabl'
 gem 'oj'
 
