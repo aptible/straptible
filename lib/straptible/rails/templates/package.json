@@ -1,0 +1,13 @@
+{
+  "name" : "auth.aptible.com",
+  "version" : "0.1.0",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/aptible/auth.aptible.com.git"
+  },
+  "dependencies" : {
+    "aglio" : "git://github.com/fancyremarker/aglio.git#published",
+    "supervisor": "*",
+    "dredd" : "*"
+  }
+}

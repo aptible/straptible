@@ -73,6 +73,11 @@ describe 'straptible api' do
       File.exist?(travis_yml).should be_true
       File.read(travis_yml).should match /jruby/
     end
+
+    it 'has a package.json for Node dependencies' do
+      package_json = File.join(@tmpdir, 'foobar', 'package.json')
+      File.exist?(package_json).should be_true
+    end
   end
 
   context 'executing bundle install' do
