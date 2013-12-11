@@ -4,11 +4,12 @@ gem 'rails'
 gem 'pg'
 gem 'draper'
 gem 'rabl'
+gem 'oj'
 
 group :development, :test do
   gem 'annotate'
   gem 'aptible-tasks'
-  gem 'rubocop', github: 'bbatsov/rubocop'
+  gem 'rabl-generators'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'pry'
