@@ -85,6 +85,16 @@ describe 'straptible api' do
       File.exist?(mime_types).should be_true
       File.read(mime_types).should match /:json_api/
     end
+
+    it 'sets config in application.rb instead of config/initializers' do
+      initializers = File.join(@tmpdir, 'foobar', 'config', 'initializers')
+      filter_parameters = File.join(initializers, 'filter_parameters.rb')
+      File.exist?(filter_parameters).should be_false
+
+      application = File.join(@tmpdir, 'foobar', 'config', 'application.rb')
+      File.exist?(application).should be_true
+      File.read(application).should match /filter_parameters/
+    end
   end
 
   context 'executing bundle install' do

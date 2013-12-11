@@ -8,7 +8,6 @@ Bundler.require(:default, Rails.env)
 module <%= app_const_base %>
   class Application < Rails::Application
     config.assets.enabled = false
-
     config.app_generators.template_engine false
 
     config.generators do |g|
@@ -20,6 +19,9 @@ module <%= app_const_base %>
       g.hide_namespace :test_unit
       g.hide_namespace :js
       g.hide_namespace :erb
+      g.hide_namespace :mongoid
     end
+
+    config.filter_parameters += [:password]
   end
 end
