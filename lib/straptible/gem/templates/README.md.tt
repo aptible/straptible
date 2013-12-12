@@ -10,7 +10,7 @@ TODO: Add description.
 
 Add the following line to your application's Gemfile.
 
-    gem <%= config[:name] %>
+    gem '<%= config[:name] %>'
 
 And then run `bundle install`.
 
