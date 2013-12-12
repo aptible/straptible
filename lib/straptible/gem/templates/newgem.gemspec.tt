@@ -1,0 +1,26 @@
+# encoding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+
+require 'English'
+require '<%= config[:namespaced_path] %>/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = '<%= config[:name] %>'
+  spec.version       = <%= config[:constant_name] %>::VERSION
+  spec.authors       = ['<%= config[:author] %>']
+  spec.email         = ['<%= config[:email] %>']
+  spec.description   = %q{TODO: Write a gem description}
+  spec.summary       = %q{TODO: Write a gem summary}
+  spec.homepage      = 'https://github.com/aptible/<%= config[:name] %>'
+  spec.license       = 'MIT'
+
+  spec.files         = `git ls-files`.split($RS)
+  spec.test_files    = spec.files.grep(/^spec\//)
+  spec.require_paths = ['lib']
+
+  spec.add_development_dependency 'bundler', '~> <%= Bundler::VERSION.split('.')[0..1].join('.') %>'
+  spec.add_development_dependency 'aptible-tasks'
+  spec.add_development_dependency 'rake'
+  spec.add_dependency 'rspec', '~> 2.0'
+end
