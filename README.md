@@ -17,7 +17,7 @@ Then, to create a new project, first choose your flavor:
 | ---------:| ------- |
 | `webapp` (*coming soon*) | Rails web app |
 | `api` | Rails API — similar to `webapp`, but tailored and stripped down for a JSON API |
-| `gem` (*coming soon*) | Ruby gem |
+| `gem` | Ruby gem |
 | `docs` (*coming soon*) | Document repository |
 
 Then, run:
