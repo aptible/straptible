@@ -1,4 +1,4 @@
-# ![](https://raw.github.com/aptible/straptible/master/lib/straptible/rails/templates/public.api/icon-72-cropped.png) <%= config[:constant_name] %>
+# ![](https://raw.github.com/aptible/straptible/master/lib/straptible/rails/templates/public.api/icon-60px.png) <%= config[:constant_name] %>
 
 [![Gem Version](https://badge.fury.io/rb/<%= config[:name] %>.png)](https://rubygems.org/gems/<%= config[:name] %>)
 [![Build Status](https://travis-ci.org/aptible/<%= config[:name] %>.png?branch=master)](https://travis-ci.org/aptible/<%= config[:name] %>)
@@ -10,7 +10,7 @@ TODO: Add description.
 
 Add the following line to your application's Gemfile.
 
-    gem <%= config[:name] %>
+    gem '<%= config[:name] %>'
 
 And then run `bundle install`.
 

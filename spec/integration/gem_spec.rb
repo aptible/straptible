@@ -21,7 +21,7 @@ describe 'straptible gem' do
     it 'includes an appropriate README.md' do
       readme = File.join(@tmpdir, 'foobar', 'README.md')
       File.exist?(readme).should be_true
-      File.read(readme).should match /\#.*icon-72-cropped.png.*Foobar/
+      File.read(readme).should match /\#.*icon-60px.png.*Foobar/
     end
   end
 
