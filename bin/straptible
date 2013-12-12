@@ -11,11 +11,15 @@ def usage(dest = $stdout)
   dest.puts 'Usage: straptible <flavor> <path> [options...]'
 end
 
-flavor = ARGV.shift
+flavor = ARGV.first
 case flavor
 when 'api'
   require File.join('straptible', 'rails', 'generators', 'api')
+  ARGV.shift
   Straptible::Rails::Generators::Api.start
+when 'gem'
+  require File.join('straptible', 'gem', 'generators', 'base')
+  Straptible::Gem::Generators::Base.start
 when nil
   usage($stderr)
   exit 1
