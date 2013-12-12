@@ -33,7 +33,7 @@ describe 'straptible api' do
     it 'includes an appropriate README.md' do
       readme = File.join(@tmpdir, 'foobar', 'README.md')
       File.exist?(readme).should be_true
-      File.read(readme).should match /\#.*public\/icon-72-cropped.png.*Foobar/
+      File.read(readme).should match /\#.*public\/icon-60px.png.*Foobar/
     end
 
     it 'does not include HTML error pages' do
