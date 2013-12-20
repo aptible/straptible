@@ -18,14 +18,14 @@ The following command will run Ruby style guide checking, unit tests, and integr
 
 ## API Blueprint
 
-We use [API Blueprint](http://apiblueprint.org/) for API documentation. To compose your blueprint, edit `blueprint.md` according to to the API Blueprint [format](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md). [This tutorial](http://apiary.io/blueprint) might be a good starting point.
+We use [API Blueprint](http://apiblueprint.org/) for API documentation. To compose your blueprint, edit `apiary.apib` according to to the API Blueprint [format](https://github.com/apiaryio/api-blueprint/blob/master/API%20Blueprint%20Specification.md). [This tutorial](http://apiary.io/blueprint) might be a good starting point.
 
 To validate the API implementation against its blueprint, first fire up a Rails server, then invoke Dredd:
 
     bundle exec rails server -p 3000 -d
-    dredd blueprint.md http://localhost:3000
+    dredd apiary.apib http://localhost:3000
 
-To preview the documentation, use Aglio: `aglio -i blueprint.md -p 4000 -s`. Then visit [localhost:4000](http://localhost:4000/).
+To preview the documentation, use Aglio: `aglio -i apiary.apib -p 4000 -s`. Then visit [localhost:4000](http://localhost:4000/).
 
 ## Copyright
 
