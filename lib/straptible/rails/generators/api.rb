@@ -7,9 +7,11 @@ module Straptible
       class Api < Base
         protected
 
+        # rubocop:disable AccessorMethodName
         def get_builder_class
           Straptible::Rails::Builders::Api
         end
+        # rubocop:enable AccessorMethodName
       end
     end
   end

@@ -39,9 +39,11 @@ module Straptible
 
         protected
 
+        # rubocop:disable AccessorMethodName
         def get_builder_class
           Straptible::Rails::Builders::Base
         end
+        # rubocop:enable AccessorMethodName
       end
     end
   end
