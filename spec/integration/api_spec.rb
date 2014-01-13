@@ -33,7 +33,7 @@ describe 'straptible api' do
     it 'includes an appropriate README.md' do
       readme = File.join(@tmpdir, 'foobar', 'README.md')
       File.exist?(readme).should be_true
-      File.read(readme).should match /\#.*public\/icon-60px.png.*Foobar/
+      File.read(readme).should match(/\#.*public\/icon-60px.png.*Foobar/)
     end
 
     it 'does not include HTML error pages' do
@@ -59,8 +59,8 @@ describe 'straptible api' do
     it 'has a valid database.yml' do
       database_yml = File.join(@tmpdir, 'foobar', 'config', 'database.yml')
       File.exist?(database_yml).should be_true
-      File.read(database_yml).should match /foobar_development/
-      File.read(database_yml).should match /foobar_test/
+      File.read(database_yml).should match(/foobar_development/)
+      File.read(database_yml).should match(/foobar_test/)
     end
 
     it 'is initialized as a Git repository' do
@@ -71,7 +71,7 @@ describe 'straptible api' do
     it 'has a .travis.yml file which includes JRuby in the build matrix' do
       travis_yml = File.join(@tmpdir, 'foobar', '.travis.yml')
       File.exist?(travis_yml).should be_true
-      File.read(travis_yml).should match /jruby/
+      File.read(travis_yml).should match(/jruby/)
     end
 
     it 'has a package.json for Node dependencies' do
@@ -83,7 +83,7 @@ describe 'straptible api' do
       initializers = File.join(@tmpdir, 'foobar', 'config', 'initializers')
       mime_types = File.join(initializers, 'mime_types.rb')
       File.exist?(mime_types).should be_true
-      File.read(mime_types).should match /:json_api/
+      File.read(mime_types).should match(/:json_api/)
     end
 
     it 'sets config in application.rb instead of config/initializers' do
@@ -93,7 +93,7 @@ describe 'straptible api' do
 
       application = File.join(@tmpdir, 'foobar', 'config', 'application.rb')
       File.exist?(application).should be_true
-      File.read(application).should match /filter_parameters/
+      File.read(application).should match(/filter_parameters/)
     end
   end
 
