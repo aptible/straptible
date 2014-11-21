@@ -19,81 +19,82 @@ describe 'straptible api' do
     end
 
     it 'does not include a test/ directory' do
-      File.exist?(File.join(@tmpdir, 'foobar', 'test')).should be_false
+      expect(File.exist?(File.join(@tmpdir, 'foobar', 'test'))).to eq false
     end
 
     it 'includes a spec/ directory' do
-      File.exist?(File.join(@tmpdir, 'foobar', 'spec')).should be_true
+      expect(File.exist?(File.join(@tmpdir, 'foobar', 'spec'))).to eq true
     end
 
     it 'does not include a README.rdoc' do
-      File.exist?(File.join(@tmpdir, 'foobar', 'README.rdoc')).should be_false
+      readme = File.join(@tmpdir, 'foobar', 'README.rdoc')
+      expect(File.exist?(readme)).to eq false
     end
 
     it 'includes an appropriate README.md' do
       readme = File.join(@tmpdir, 'foobar', 'README.md')
-      File.exist?(readme).should be_true
-      File.read(readme).should match(/\#.*public\/icon-60px.png.*Foobar/)
+      expect(File.exist?(readme)).to eq true
+      expect(File.read(readme)).to match(/\#.*public\/icon-60px.png.*Foobar/)
     end
 
     it 'does not include HTML error pages' do
-      Dir.glob('public/*.html').should be_empty
+      expect(Dir.glob('public/*.html')).to be_empty
     end
 
     it 'does not include app/assets/ or app/mailers/' do
       app = File.join(@tmpdir, 'foobar', 'app')
-      File.exist?(File.join(app, 'assets')).should be_false
-      File.exist?(File.join(app, 'mailers')).should be_false
+      expect(File.exist?(File.join(app, 'assets'))).to eq false
+      expect(File.exist?(File.join(app, 'mailers'))).to eq false
     end
 
     it 'includes app/decorators/' do
       app = File.join(@tmpdir, 'foobar', 'app')
-      File.exist?(File.join(app, 'decorators')).should be_true
+      expect(File.exist?(File.join(app, 'decorators'))).to eq true
     end
 
     it 'has a spec/spec_helper.rb' do
       spec = File.join(@tmpdir, 'foobar', 'spec')
-      File.exist?(File.join(spec, 'spec_helper.rb')).should be_true
+      expect(File.exist?(File.join(spec, 'spec_helper.rb'))).to eq true
     end
 
     it 'has a valid database.yml' do
       database_yml = File.join(@tmpdir, 'foobar', 'config', 'database.yml')
-      File.exist?(database_yml).should be_true
-      File.read(database_yml).should match(/foobar_development/)
-      File.read(database_yml).should match(/foobar_test/)
+      expect(File.exist?(database_yml)).to eq true
+      expect(File.read(database_yml)).to match(/foobar_development/)
+      expect(File.read(database_yml)).to match(/foobar_test/)
     end
 
     it 'is initialized as a Git repository' do
       git_log = `cd #{File.join(@tmpdir, 'foobar')} && git log --oneline`
-      git_log.should =~ /Initial commit.*#{Straptible::VERSION}/
+      expect(git_log).to match(/Initial commit.*#{Straptible::VERSION}/)
     end
 
     it 'has a .travis.yml file which includes JRuby in the build matrix' do
       travis_yml = File.join(@tmpdir, 'foobar', '.travis.yml')
-      File.exist?(travis_yml).should be_true
-      File.read(travis_yml).should match(/jruby/)
+      expect(File.exist?(travis_yml)).to eq true
+      expect(File.read(travis_yml)).to match(/jruby/)
     end
 
     it 'has a package.json for Node dependencies' do
       package_json = File.join(@tmpdir, 'foobar', 'package.json')
-      File.exist?(package_json).should be_true
+      expect(File.exist?(package_json)).to eq true
     end
 
     it 'has an initializer for the JSON-API MIME type' do
       initializers = File.join(@tmpdir, 'foobar', 'config', 'initializers')
       mime_types = File.join(initializers, 'mime_types.rb')
-      File.exist?(mime_types).should be_true
-      File.read(mime_types).should match(/:json_api/)
+      expect(File.exist?(mime_types)).to eq true
+      expect(File.read(mime_types)).to match(/:json_api/)
     end
 
     it 'sets config in application.rb instead of config/initializers' do
       initializers = File.join(@tmpdir, 'foobar', 'config', 'initializers')
       filter_parameters = File.join(initializers, 'filter_parameters.rb')
-      File.exist?(filter_parameters).should be_false
+      expect(File.exist?(filter_parameters)).to eq false
 
       application = File.join(@tmpdir, 'foobar', 'config', 'application.rb')
-      File.exist?(application).should be_true
-      File.read(application).should match(/filter_parameters/)
+      expect(File.exist?(application)).to eq true
+      expect(File.read(application)).to match(/filter_parameters/)
     end
   end
 
@@ -109,7 +110,7 @@ describe 'straptible api' do
 
     it 'passes Rubocop muster' do
       `cd #{File.join(@tmpdir, 'foobar')} && bundle exec rake rubocop`
-      $CHILD_STATUS.exitstatus.should == 0
+      expect($CHILD_STATUS.exitstatus).to eq 0
     end
 
   end

@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.version       = Straptible::VERSION
   spec.authors       = ['Frank Macreery']
   spec.email         = ['frank@macreery.com']
-  spec.description   = %q{A tool for bootstrapping new Aptible projects}
-  spec.summary       = %q{A tool for bootstrapping new Aptible projects}
+  spec.description   = 'A tool for bootstrapping new Aptible projects'
+  spec.summary       = 'A tool for bootstrapping new Aptible projects'
   spec.homepage      = 'https://github.com/aptible/straptible'
   spec.license       = 'MIT'
 

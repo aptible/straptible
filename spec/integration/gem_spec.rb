@@ -20,8 +20,8 @@ describe 'straptible gem' do
 
     it 'includes an appropriate README.md' do
       readme = File.join(@tmpdir, 'foobar', 'README.md')
-      File.exist?(readme).should be_true
-      File.read(readme).should match(/\#.*icon-60px.png.*Foobar/)
+      expect(File.exist?(readme)).to eq true
+      expect(File.read(readme)).to match(/\#.*icon-60px.png.*Foobar/)
     end
   end
 
@@ -37,8 +37,8 @@ describe 'straptible gem' do
     it 'includes an appropriate gemspec' do
       gemdir = File.join(@tmpdir, 'foobar', 'foo_bar-baz')
       gemspec = File.join(gemdir, 'foo_bar-baz.gemspec')
-      File.exist?(gemspec).should be_true
-      File.read(gemspec).should match(/FooBar::Baz/)
+      expect(File.exist?(gemspec)).to eq true
+      expect(File.read(gemspec)).to match(/FooBar::Baz/)
     end
   end
 
@@ -55,7 +55,7 @@ describe 'straptible gem' do
 
     it 'passes Rubocop muster' do
       `cd #{File.join(@tmpdir, 'foobar')} && bundle exec rake rubocop`
-      $CHILD_STATUS.exitstatus.should == 0
+      expect($CHILD_STATUS.exitstatus).to eq 0
     end
   end
 end
