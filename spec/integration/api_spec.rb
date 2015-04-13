@@ -34,7 +34,7 @@ describe 'straptible api' do
     it 'includes an appropriate README.md' do
       readme = File.join(@tmpdir, 'foobar', 'README.md')
       expect(File.exist?(readme)).to eq true
-      expect(File.read(readme)).to match(/\#.*public\/icon-60px.png.*Foobar/)
+      expect(File.read(readme)).to match(%r{#.*public/icon-60px.png.*Foobar})
     end
 
     it 'does not include HTML error pages' do
@@ -112,6 +112,5 @@ describe 'straptible api' do
       `cd #{File.join(@tmpdir, 'foobar')} && bundle exec rake rubocop`
       expect($CHILD_STATUS.exitstatus).to eq 0
     end
-
   end
 end
