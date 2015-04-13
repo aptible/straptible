@@ -1,4 +1,5 @@
 require 'thor'
+require 'bundler'
 
 module Straptible
   module Gem
