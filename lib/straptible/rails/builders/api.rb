@@ -47,6 +47,8 @@ module Straptible
           remove_dir 'app/models/concerns'
           remove_dir 'app/views/layouts'
 
+          remove_file 'bin/setup'
+
           empty_directory 'app/decorators'
         end
       end

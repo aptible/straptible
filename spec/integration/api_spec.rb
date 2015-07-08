@@ -120,7 +120,9 @@ describe 'straptible api' do
     end
 
     it 'passes Rubocop muster' do
-      `cd #{File.join(@tmpdir, 'foobar')} && bundle exec rake rubocop`
+      Bundler.with_clean_env do
+        `cd #{File.join(@tmpdir, 'foobar')} && bundle exec rake rubocop`
+      end
       expect($CHILD_STATUS.exitstatus).to eq 0
     end
   end
