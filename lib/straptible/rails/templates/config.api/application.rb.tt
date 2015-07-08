@@ -24,5 +24,19 @@ module <%= app_const_base %>
     end
 
     config.filter_parameters += [:password]
+
+    config.middleware.insert 0, Rack::Cors do
+      allow do
+        if ENV['CORS_DOMAIN'].present?
+          origins(*(ENV['CORS_DOMAIN'].split(',')))
+        else
+          origins 'dashboard.aptible.com'
+        end
+        resource '/*',
+                 headers: %w(Accept Authorization Origin Content-Type),
+                 methods: [:options, :patch, :post, :get, :put, :delete],
+                 credentials: true
+      end
+    end
   end
 end

@@ -5,6 +5,7 @@ gem 'pg'
 gem 'draper'
 gem 'rabl'
 gem 'oj'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'annotate'
