@@ -12,5 +12,6 @@ group :development, :test do
   gem 'rabl-generators'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'fabrication'
   gem 'pry'
 end

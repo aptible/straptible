@@ -15,7 +15,8 @@ module <%= app_const_base %>
       g.javascripts = false
       g.helper = false
       g.view_specs = false
-
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :fabrication
       g.hide_namespace :test_unit
       g.hide_namespace :js
       g.hide_namespace :erb
