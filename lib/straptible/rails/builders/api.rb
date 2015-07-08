@@ -16,6 +16,10 @@ module Straptible
           directory 'config.api', 'config'
         end
 
+        def lib
+          directory 'lib.api', 'lib'
+        end
+
         def public_directory
           directory 'public.api', 'public'
         end

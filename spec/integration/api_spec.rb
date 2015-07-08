@@ -96,6 +96,17 @@ describe 'straptible api' do
       expect(File.exist?(application)).to eq true
       expect(File.read(application)).to match(/filter_parameters/)
     end
+
+    it 'includes auto_annotate_models.rake' do
+      tasks = File.join(@tmpdir, 'foobar', 'lib', 'tasks')
+      auto_annotate = File.join(tasks, 'auto_annotate_models.rake')
+      expect(File.exist?(auto_annotate)).to eq true
+    end
+
+    it 'loads Annotate tasks' do
+      rakefile = File.join(@tmpdir, 'foobar', 'Rakefile')
+      expect(File.read(rakefile)).to match(/Annotate.load_tasks/)
+    end
   end
 
   context 'executing bundle install' do
