@@ -10,13 +10,13 @@ Gem::Specification.new do |spec|
   spec.version       = <%= config[:constant_name] %>::VERSION
   spec.authors       = ['<%= config[:author] %>']
   spec.email         = ['<%= config[:email] %>']
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = 'TODO: Write a gem description'
+  spec.summary       = 'TODO: Write a gem summary'
   spec.homepage      = 'https://github.com/aptible/<%= config[:name] %>'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($RS)
-  spec.test_files    = spec.files.grep(/^spec\//)
+  spec.test_files    = spec.files.grep(%r{^spec/})
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'bundler', '~> <%= Bundler::VERSION.split('.')[0..1].join('.') %>'
