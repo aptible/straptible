@@ -15,7 +15,8 @@ module <%= app_const_base %>
       g.javascripts = false
       g.helper = false
       g.view_specs = false
-
+      g.test_framework :rspec, fixture: true
+      g.fixture_replacement :fabrication
       g.hide_namespace :test_unit
       g.hide_namespace :js
       g.hide_namespace :erb
@@ -23,5 +24,19 @@ module <%= app_const_base %>
     end
 
     config.filter_parameters += [:password]
+
+    config.middleware.insert 0, Rack::Cors do
+      allow do
+        if ENV['CORS_DOMAIN'].present?
+          origins(*(ENV['CORS_DOMAIN'].split(',')))
+        else
+          origins 'dashboard.aptible.com'
+        end
+        resource '/*',
+                 headers: %w(Accept Authorization Origin Content-Type),
+                 methods: [:options, :patch, :post, :get, :put, :delete],
+                 credentials: true
+      end
+    end
   end
 end

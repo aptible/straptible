@@ -2,5 +2,4 @@ before_install:
   - git config --global user.email "travis@aptible.com"
   - git config --global user.name "Travis"
 rvm:
-  2.0.0
-  jruby
+  - "2.1"

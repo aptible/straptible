@@ -5,6 +5,7 @@ gem 'pg'
 gem 'draper'
 gem 'rabl'
 gem 'oj'
+gem 'rack-cors'
 
 group :development, :test do
   gem 'annotate'
@@ -12,5 +13,6 @@ group :development, :test do
   gem 'rabl-generators'
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'fabrication'
   gem 'pry'
 end

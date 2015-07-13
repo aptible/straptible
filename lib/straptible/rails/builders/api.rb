@@ -16,6 +16,10 @@ module Straptible
           directory 'config.api', 'config'
         end
 
+        def lib
+          directory 'lib.api', 'lib'
+        end
+
         def public_directory
           directory 'public.api', 'public'
         end
@@ -42,6 +46,8 @@ module Straptible
           remove_dir 'app/mailers'
           remove_dir 'app/models/concerns'
           remove_dir 'app/views/layouts'
+
+          remove_file 'bin/setup'
 
           empty_directory 'app/decorators'
         end

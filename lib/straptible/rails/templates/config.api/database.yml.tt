@@ -1,11 +1,13 @@
 development:
   adapter: postgresql
   encoding: unicode
+  template: template0
   database: <%= app_name.gsub('-', '_') %>_development
   pool: 5
 
 test:
   adapter: postgresql
   encoding: unicode
+  template: template0
   database: <%= app_name.gsub('-', '_') %>_test
   pool: 5
